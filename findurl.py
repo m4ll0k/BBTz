@@ -44,9 +44,8 @@ for i in all_links:
 	if filename:
 		i = i.replace('\u3000','')
 		i = i.replace(r'\u','')
-		i= i.split('://')[1]
 		file.write('%s\n'%i.encode('ascii', 'ignore').decode('ascii'))
 	else:
-		print i.split('://')[1]
+		print i
 if filename:
 	file.close()
