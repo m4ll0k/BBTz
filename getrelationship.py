@@ -29,7 +29,7 @@ def main(target: str) -> None:
         )
 
 if len(sys.argv) > 1:
-    for target in sys.argv[2].split(','):
+    for target in sys.argv[1].split(','):
         main(target)
 else:
     for target in sys.stdin.readlines():
