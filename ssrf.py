@@ -37,7 +37,8 @@ def main(url:str,ip:str)->None:
         request = requests.get(
             url = url_check(url),
             headers = headers,
-            verify = False
+            verify = False,
+            allow_redirects = False
         )
         print('[ + ] Code: {code} - {url}'.format(code=request.status_code,url=request.url))
     except Exception as err:
