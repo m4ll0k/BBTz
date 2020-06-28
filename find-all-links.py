@@ -3,7 +3,7 @@ import json
 import sys
 
 if len(sys.argv) < 2 or len(sys.argv) > 4:
-	print '%s [domain] [output]'%sys.argv[0]
+	print('%s [domain] [output]'%sys.argv[0])
 	sys.exit(0)
 
 all_links = []
@@ -46,6 +46,6 @@ for i in all_links:
 		i = i.replace(r'\u','')
 		file.write('%s\n'%i.encode('ascii', 'ignore').decode('ascii'))
 	else:
-		print i
+		print(i)
 if filename:
 	file.close()
