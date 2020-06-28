@@ -14,9 +14,9 @@ injectable_headers = [
     "X-Original-Remote-Addr","X-Original-Url","X-Proxy-Url","X-Rewrite-Url","X-Real-Ip","X-Remote-Addr"
     ]
 
-def reafile()->None:
+def read_file(file_path:str)->None:
     try:
-        return [x.strip() for x in open(file,'r+')]
+        return [x.strip() for x in open(file_path,'r+')]
     except Exception as err:
         sys.exit(
             print('[ERROR] %s'%err)
