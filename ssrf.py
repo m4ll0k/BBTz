@@ -54,7 +54,7 @@ if len(sys.argv) == 1:
     usage()
 
 if len(sys.argv) == 3:
-    for url in reafile(sys.argv[1]):
+    for url in read_file(sys.argv[1]):
         main(url,sys.argv[2])
 else:
     for target in sys.stdin.readlines():
