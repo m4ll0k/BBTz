@@ -280,16 +280,18 @@ def usage():
     print('\n\tby @m4ll0k - github.com/m4ll0k')
     sys.exit(0)
 
-if len(sys.argv) == 1:
-    usage()
-
+stdin=False
 if len(sys.argv) == 2:
     main(
         sys.argv[1]
     )
 else:
     for jsFile in sys.stdin.readlines():
+        stdin=True
         jsFile = jsFile.strip()
         if jsFile == '\n':
             usage()
         main(jsFile)
+
+if len(sys.argv) == 1 and stdin is False:
+	usage()
