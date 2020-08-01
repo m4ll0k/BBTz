@@ -282,6 +282,8 @@ def usage():
 
 stdin=False
 if len(sys.argv) == 2:
+	if sys.argv[1] == '-h':
+		usage()
     main(
         sys.argv[1]
     )
