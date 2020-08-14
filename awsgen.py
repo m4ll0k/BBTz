@@ -4,6 +4,44 @@
 # -- awsgen.py: is a simple tool for generates permutations, alterations and mutations of AWS S3 Buckets Names
 # ---------------------------
 
+'''
+Example:
+
+m4ll0k@m4ll0k tools: python3 awsgen.py my-domain-hosted-in-aws.example.com
+
+my-domain-hosted-in-awsexample.s3.amazonaws.com
+my-domain-hosted-in-aws-example.s3.amazonaws.com
+my-domain-hosted-in-aws.example.com.s3.amazonaws.com
+my-domain-hosted-in-aws_example.s3.amazonaws.com
+my-domain-hosted-in-aws-example-com.s3.amazonaws.com
+my-domain-hosted-in-aws_example_com.s3.amazonaws.com
+my-domain-hosted-in-awsexamplecom.s3.amazonaws.com
+my-domain-hosted-in-aws.example.s3.amazonaws.com
+com-example-my-domain-hosted-in-aws.s3.amazonaws.com
+example-my-domain-hosted-in-aws.s3.amazonaws.com
+com_example_my-domain-hosted-in-aws.s3.amazonaws.com
+example_my-domain-hosted-in-aws.s3.amazonaws.com
+comexamplemy-domain-hosted-in-aws.s3.amazonaws.com
+my-domain-hosted-in-aws.s3.amazonaws.com
+example.s3.amazonaws.com
+com.s3.amazonaws.com
+examplemy-domain-hosted-in-aws.s3.amazonaws.com
+my-domain-hosted-in-aws.com.s3.amazonaws.com
+my-domain-hosted-in-aws-com.s3.amazonaws.com
+my-domain-hosted-in-aws_com.s3.amazonaws.com
+my-domain-hosted-in-awscom.s3.amazonaws.com
+com-my-domain-hosted-in-aws.s3.amazonaws.com
+com_my-domain-hosted-in-aws.s3.amazonaws.com
+commy-domain-hosted-in-aws.s3.amazonaws.com
+example.com.s3.amazonaws.com
+example-com.s3.amazonaws.com
+example_com.s3.amazonaws.com
+examplecom.s3.amazonaws.com
+com-example.s3.amazonaws.com
+com_example.s3.amazonaws.com
+comexample.s3.amazonaws.com
+'''
+
 import itertools
 import sys 
 
