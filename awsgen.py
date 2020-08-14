@@ -1,6 +1,7 @@
 # ---------------------------
 # -- by m4ll0k --
 # -- github.com/m4ll0k --
+# -- awsgen.py: is a simple tool for generates permutations, alterations and mutations of AWS S3 Buckets Names
 # ---------------------------
 
 import itertools
