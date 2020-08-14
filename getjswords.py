@@ -282,8 +282,8 @@ def usage():
 
 stdin=False
 if len(sys.argv) == 2:
-	if sys.argv[1] == '-h':
-		usage()
+    if sys.argv[1] == '-h':
+        usage()
     main(
         sys.argv[1]
     )
@@ -296,4 +296,4 @@ else:
         main(jsFile)
 
 if len(sys.argv) == 1 and stdin is False:
-	usage()
+    usage()
