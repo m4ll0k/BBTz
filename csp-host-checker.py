@@ -65,6 +65,7 @@ def main(url):
 		if response.headers.get(_csp):
 			original_csp = response.headers.get(_csp)
 			break
+	if original_csp is None: return 
 	domains = parseCSP(original_csp)
 	if args.check:
 		for url in domains:
