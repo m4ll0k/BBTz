@@ -61,7 +61,7 @@ _csp_source_ = [
 def main(url):
 	response = request(url)
 	original_csp = None
-	for _csp in ['Content-Security-Policy','content-security-policy','X-Content-Security-Policy','x-content-security-policy','x-webkit-csp','X-Webkit-CSP']:
+	for _csp in ['Content-Security-Policy','Content-Security-Policy-Report-Only','content-security-policy-report-only','content-security-policy','X-Content-Security-Policy','x-content-security-policy','x-webkit-csp','X-Webkit-CSP']:
 		if response.headers.get(_csp):
 			original_csp = response.headers.get(_csp)
 			break
