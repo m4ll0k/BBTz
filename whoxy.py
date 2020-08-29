@@ -40,9 +40,7 @@ def __main__(keyword):
 
 stdin = False
 if __name__ == "__main__":
-	if len(sys.argv) == 1:
-		__usage__()
-	elif len(sys.argv) > 1 and len(sys.argv) < 3:
+	if len(sys.argv) > 1 and len(sys.argv) < 3:
 		for keyword in sys.argv[1].split(';'):
 			__main__(keyword)
 	else:
