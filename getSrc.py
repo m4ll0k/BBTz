@@ -39,6 +39,7 @@ def __main__(site):
 	# print('[ + ] '+site)
 	content = getContent(site)
 	from_str = html.fromstring(content.content)
+	from_str.make_links_absolute(site)
 	for i in from_str.xpath('//script'):
 		if i.get('src') is not None:
 			print(i.get('src'))
