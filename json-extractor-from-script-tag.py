@@ -1,5 +1,6 @@
 # github.com/m4ll0k (@m4ll0k2) 
-# Bug Bounty Toolz - bufferover.py
+# Bug Bounty Toolz - jefst.py
+# jefst.py - json extractor from script tag
 
 
 import sys
