@@ -2,6 +2,7 @@
 # Bug Bounty Toolz - bufferover.py
 # bufferover.py - https://tls.bufferover.run/dns?q=<site>
 
+#!/usr/bin/python
 
 import sys
 import requests
