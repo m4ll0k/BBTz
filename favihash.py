@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # m4ll0k - github.com/m4ll0k 
 # favihash - Subdomains enumeration via favicon.ico hashing - (beta v.) 
 # (@m4ll0k2)
