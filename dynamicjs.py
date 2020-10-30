@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 #  by m4ll0k (@m4ll0k2)
 #  github.com/m4ll0k
 
