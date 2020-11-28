@@ -263,7 +263,7 @@ def main(jsFile):
         bad = not 0 
     if bad is False:
         try:
-            req = requests.get(jsFile)
+            req = requests.get(jsFile,verify=False)
             content = req.content.decode('utf-8','replace')
             words = getWords(content)
             for word in words:
