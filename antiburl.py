@@ -1,6 +1,9 @@
 # python antiburl
 # m4ll0k - github.com/m4ll0k
 
+# usage:
+# cat myurls.txt | python3 antiburl.py -A -X 400,404,403,401 -H 'header:value' 'header2:value2' -N -C "mycookies=10" -T 50 
+
 import requests
 import concurrent.futures 
 import threading 
