@@ -1,4 +1,4 @@
-# antiburl - advance anti-burl tool
+# antiburl - advanced anti-burl tool 
 # https://github.com/tomnomnom/hacks/blob/master/anti-burl/readme.md
 # m4ll0k - github.com/m4ll0k
 
