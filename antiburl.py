@@ -1,4 +1,5 @@
-# python antiburl
+# antiburl - advance anti-burl tool
+# https://github.com/tomnomnom/hacks/blob/master/anti-burl/readme.md
 # m4ll0k - github.com/m4ll0k
 
 # usage:
