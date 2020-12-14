@@ -1,6 +1,8 @@
 import sys,html
 from urllib import parse
-from html import unescape
+from html import unescape 
+
+# gau target.com | python3 getPaths.py
 
 allLinks = []
 
