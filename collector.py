@@ -2,7 +2,7 @@
 
 # example:
 
-# $ cat uber_js.txt | python3 linkfinder.py | python3 collector.py uber/output
+# $ cat uber_js.txt | xargs -I @ bash -c 'python3 linkfinder.py -i @ -o cli'| python3 collector.py uber/output
 # $ cd uber/output 
 # $ ls 
 # js.txt params.txt urls.txt paths.txt ...
