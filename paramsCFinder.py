@@ -169,6 +169,12 @@ def _0x4_(Str:str)->None:
 		print(_0x1_(Str))
 		print(_0x2_(Str))
 		print(_0x3_(Str))
+		print("_"+_0x1_(Str))
+		print("_"+_0x2_(Str))
+		print("_"+_0x3_(Str))
+		print(_0x1_(Str)+"_")
+		print(_0x2_(Str)+"_")
+		print(_0x3_(Str)+"_")
 
 
 try:
