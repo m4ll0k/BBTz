@@ -48,9 +48,9 @@ _CUSTOMER_id
 _CUSTOMER_ID
 
 # another example:
-$ echo "customer_id" |python3 paramsCFinder.py|tr '\n' '=&'
+$ echo "customer_id" |python3 paramsCFinder.py|tr '\n' '='|sed 's/=/=\&/g' 
 
-Customer=Id=customer=id=CUSTOMER=ID=Customer_Id=customer_id=CUSTOMER_ID=CustomerId=customerid=CUSTOMERID=_CustomerId=_customerid=_CUSTOMERID=_Customer_Id=_customer_id=_CUSTOMER_ID=Customer_id=Customer_Id=customer_Id=customer_id=CUSTOMER_id=CUSTOMER_ID=CustomerID=CustomerId=customerId=customerid=CUSTOMERid=CUSTOMERID=_CustomerID=_CustomerId=_customerId=_customerid=_CUSTOMERid=_CUSTOMERID=_Customer_ID=_Customer_Id=_customer_Id=_customer_id=_CUSTOMER_id=_CUSTOMER_ID=
+Customer=&Id=&customer=&id=&CUSTOMER=&ID=&....
 '''
 
 
