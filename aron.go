@@ -1,7 +1,6 @@
 /*
 ** -----------------------------------
 ** Aron - Hidden Parameters Bruteforce 
-** Coded by Momo (M4ll0k) Outaadi
 ** https://github.com/m4ll0k
 ** -----------------------------------
 */
