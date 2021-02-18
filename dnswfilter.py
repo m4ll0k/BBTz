@@ -66,6 +66,9 @@ def readfile(path):
 def check_wildcard(resolvers,domain):
     f_resp = lookup(resolvers,domain)
     s_resp = lookup(resolvers,check_domain(domain))
+    # sorted 
+    f_resp.sort()
+    s_resp.sort()
     if f_resp != s_resp and args.noWildcard:
         if args.output:
             G_OUTPUT.append(domain)
