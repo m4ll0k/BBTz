@@ -77,6 +77,7 @@ def comparator(url):
 			print(f'{R}[Change Detected]:{E} {G}{url}{E}')
 	else:
 		# update db with new url
+		print(f'{G}[Not in DB.. added]{E} {url}')
 		tmp_db.update({
 				f"{url}":f"{gethash(http(url).content)}"
 			})
