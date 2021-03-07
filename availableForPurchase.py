@@ -2,12 +2,12 @@
 
 # by m4ll0k - @m4ll0k
 
+import sys
 try:
 	import requests
 	import tldextract
 except Exception as err:
 	sys.exit(print(f'{err}',))
-import sys
 import json
 
 t_gre  = "\033[1;32m" 
