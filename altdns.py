@@ -23,7 +23,7 @@ $ python3 altdns.py -w wordlist.txt www.google.com
 $ python3 altdns.py -w "stg,dev,01,test,staging,aws" www.google.com
 
 <increase and decrease numbers (if found in subdomain)>
-$ python3 altdns.py -w "stg,dev" www10.google.com -i 5 -d 5
+$ python3 altdns.py -w "stg,dev" www10.google.com -i 5 -d 5 # increase 5 = www11. ... www15.  decrease 5 = www10. ... www5.
 
 <threads>
 $ python3 altdns.py -w "stg,dev" mytargets.txt -t 100
