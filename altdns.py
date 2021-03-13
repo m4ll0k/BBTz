@@ -36,7 +36,9 @@ $ python3 altdns.py -w "stg,dev" www.google.com -n > outputfile.txt
 
 <pipe with other tools like massdns,dnsx,..etc>
 
-$ python3 altdns.py -w "stg,dev" mytargets.txt -n  -i 5 -d 5 | massdns -r resolvers.txt -t A -o S -w output.txt
+$ python3 altdns.py -w "stg,dev" mytargets.txt -n  -i 5 -d 5 | massdns -r resolvers.txt -t A -o S -w output.txt 
+
+
 '''
 
 
@@ -201,8 +203,8 @@ def main():
     parser.add_argument("-w", "--wordlist",help="Wordlist OR list of words like argument, e.g: \"word,word1,word2..\"",required=False, default="",action="store")
     parser.add_argument("-t", "--threads",help="Amount of threads to run simultaneously, default = 50", default=50, type=int)
     parser.add_argument("-n","--number",help="Add number suffix to every domain (0-9), default = False",default=False,action="store_true")
-    parser.add_argument("-i","--increase",help="Add number to increase, if number is found in subdomain, default = 10",default=10,type=int)
-    parser.add_argument("-d","--decrease",help="Add number to decrease, if number is found in subdomain, defualt = 10",default=-10,type=int)
+    parser.add_argument("-i","--increase",help="Add number to increase, if number is found in subdomain, default = 0",default=0,type=int)
+    parser.add_argument("-d","--decrease",help="Add number to decrease, if number is found in subdomain, defualt = 0",default=-0,type=int)
     args = parser.parse_args()
     
     if args.wordlist == "":
