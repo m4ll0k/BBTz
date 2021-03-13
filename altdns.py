@@ -10,33 +10,33 @@
 
 <stdin>
 
-$ cat targets.txt         | python3 altdns -w wordlist.txt 
-$ echo "www.google.com"   | python3 altdns -w wordlist.txt 
+$ cat targets.txt         | python3 altdns.py -w wordlist.txt 
+$ echo "www.google.com"   | python3 altdns.py -w wordlist.txt 
 
 <file>
-$ python3 altdns -w wordlist.txt mytargets.txt 
+$ python3 altdns.py -w wordlist.txt mytargets.txt 
 
 <domain string>
-$ python3 altdns -w wordlist.txt www.google.com
+$ python3 altdns.py -w wordlist.txt www.google.com
 
 <wordlist like words>
-$ python3 altdns -w "stg,dev,01,test,staging,aws" www.google.com
+$ python3 altdns.py -w "stg,dev,01,test,staging,aws" www.google.com
 
 <increase and decrease numbers (if found in subdomain)>
-$ python3 altdns -w "stg,dev" www10.google.com -i 5 -d 5
+$ python3 altdns.py -w "stg,dev" www10.google.com -i 5 -d 5
 
 <threads>
-$ python3 altdns -w "stg,dev" mytargets.txt -t 100
+$ python3 altdns.py -w "stg,dev" mytargets.txt -t 100
 
 <add number suffix>
-$ python3 altdns -w "stg,dev" www.google.com -n
+$ python3 altdns.py -w "stg,dev" www.google.com -n
 
 <output>
-$ python3 altdns -w "stg,dev" www.google.com -n > outputfile.txt 
+$ python3 altdns.py -w "stg,dev" www.google.com -n > outputfile.txt 
 
 <pipe with other tools like massdns,dnsx,..etc>
 
-$ python3 altdns -w "stg,dev" mytargets.txt -n  -i 5 -d 5 | massdns -r resolvers.txt -t A -o S -w output.txt
+$ python3 altdns.py -w "stg,dev" mytargets.txt -n  -i 5 -d 5 | massdns -r resolvers.txt -t A -o S -w output.txt
 '''
 
 
