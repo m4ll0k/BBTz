@@ -1,10 +1,8 @@
-# by m4ll0k - github.com/m4ll0k 
-# (@m4ll0k2)
-
-import requests 
+import requests
 from jsbeautifier import beautify
 import sys,re
-import string 
+import string
+import urllib3
 
 blacklisted = [
 "await",
@@ -225,7 +223,7 @@ blacklisted = [
 "window",
 "yield",
 ]
-
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 def getWords(content:str):
     allWords = []
     content = beautify(content)
@@ -237,7 +235,7 @@ def getWords(content:str):
                 allWords.append(w)
         elif len(word) == 1:
             if word in string.punctuation:
-                pass 
+                pass
             elif word in string.ascii_letters:
                 if word not in allWords:
                     allWords.append(word)
@@ -245,7 +243,7 @@ def getWords(content:str):
                 pass
         else:
             if word not in allWords:
-                allWords.append(word) 
+                allWords.append(word)
     allWords
     F_allWords = []
     for word_ in allWords:
@@ -260,10 +258,10 @@ def main(jsFile):
         print('Bad URL: %s'%jsFile,end="")
         print(', please check your url',end="")
         print(', pass..')
-        bad = not 0 
+        bad = not 0
     if bad is False:
         try:
-            req = requests.get(jsFile,verify=False)
+            req = requests.get(jsFile,verify=False,timeout=(5,5))
             content = req.content.decode('utf-8','replace')
             words = getWords(content)
             for word in words:
