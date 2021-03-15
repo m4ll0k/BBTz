@@ -4,7 +4,8 @@
 import requests 
 from jsbeautifier import beautify
 import sys,re
-import string 
+import string
+import urllib3
 
 blacklisted = [
 "await",
@@ -225,7 +226,7 @@ blacklisted = [
 "window",
 "yield",
 ]
-
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 def getWords(content:str):
     allWords = []
     content = beautify(content)
@@ -263,7 +264,7 @@ def main(jsFile):
         bad = not 0 
     if bad is False:
         try:
-            req = requests.get(jsFile,verify=False)
+            req = requests.get(jsFile,verify=False,timeout=(5,5))
             content = req.content.decode('utf-8','replace')
             words = getWords(content)
             for word in words:
