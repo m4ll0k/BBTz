@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # m4ll0k - github.com/m4ll0k
 
 import requests

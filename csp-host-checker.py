@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # by m4ll0k (@m4ll0k)
 # github.com/m4ll0k 
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy

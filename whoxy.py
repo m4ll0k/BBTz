@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # github.com/m4ll0k (@m4ll0k2) 
 # Bug Bounty Toolz - whoxy.py
 # whoxy.py - Whoxy Reverse Whois 

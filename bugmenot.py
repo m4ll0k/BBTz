@@ -1,6 +1,7 @@
+#!/usr/bin/python
+
 # m4ll0k - github.com/m4ll0k
 # Get shared credentials for your bug bounty targets or for anything else
-
 
 import requests 
 import sys 

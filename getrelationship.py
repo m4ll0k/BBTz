@@ -1,3 +1,4 @@
+#!/usr/bin/python
 
 import requests
 from lxml import html

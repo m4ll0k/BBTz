@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # github.com/m4ll0k (@m4ll0k2) 
 # Bug Bounty Toolz - bufferover.py
 # bufferover.py - https://tls.bufferover.run/dns?q=<site>
