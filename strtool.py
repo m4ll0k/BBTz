@@ -38,6 +38,22 @@ $ cat a.txt|python3 strtool.py --print "N = 0 && S = 0" # print where % of numbe
 $ cat a.txt|python3 strtool.py --print "N < 10 && S < 10" # print where % of numbers and special chars less than 10 (%), (< or = or >)
 
 
+
+# input by stdin:
+
+$ cat wordlist.txt | python3 strtool.py ... 
+
+# input by file
+
+$ python3 strtool.py wordlist.txt ... 
+
+# input by string 
+
+$ python3 strtool.py "testme" ...
+ 
+
+
+
 '''
 
 import sys 
