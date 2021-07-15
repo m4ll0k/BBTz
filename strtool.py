@@ -100,7 +100,6 @@ def par(S,STR,args):
 			F = F.replace(" ","").replace(' ','')
 			K = K.replace(" ","").replace(' ','')
 			r = _p(STR)
-			print(f'{r.get(F).split(".")[0]} {A} {K}')
 			if eval(f'{r.get(F).split(".")[0]} {A} {K}') and args.print != "":
 				true_list.append(True)
 			else:
