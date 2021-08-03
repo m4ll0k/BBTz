@@ -12,7 +12,7 @@ import json
 
 API_KEY = ""
 
-if API_KEY is "":
+if API_KEY == "":
 	sys.exit(print('Please set whoxy api_key!!'))
 
 def getWhoxyContent(keyword):
