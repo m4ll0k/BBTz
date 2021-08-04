@@ -52,14 +52,18 @@ def download_apk(url,pkname):
 
 
 def get_pages_len():
-    l = [f'https://www.apkmirror.com/uploads/?q={NAME_PK}']
-    r = requests.get(l[0],headers=HEADERS)
-    for href in FS(r.content or "").xpath('//a[@class="page larger"]/@href'):
-        href = APKM_URL + href
-        if href not in l:
-            l.append(href)
-    return [] if 'No uploads found' in (r.content.decode('utf-8') or ' ') else l
-
+    l = []
+    for i in range(1,50):
+        r = requests.get(f'https://www.apkmirror.com/uploads/page/{i}/?q={NAME_PK}',headers=HEADERS,allow_redirects=True)
+        if '<p>No uploads found</p>' in r.content.decode('utf-8'):
+            break
+        if i == 1:
+            l.append(r.url)
+        for href in FS(r.content or "").xpath('//a[@class="page larger"]/@href'):
+            href = APKM_URL + href
+            if href not in l:
+                l.append(href)
+    return l 
 
 
 def get_all_info(url):
