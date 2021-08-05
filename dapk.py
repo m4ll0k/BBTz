@@ -27,9 +27,11 @@ except Exception as err:
     sys.exit(print(f'{err}'))
 
 
-HEADERS = {
+
+HEADERS = lambda : {
     'User-Agent':f'{UserAgent().get_random_user_agent()}'
 }
+
 
 LIST_OF_PK = [
 # (url,package_name)
@@ -53,14 +55,14 @@ else:
 
 def download_apk(url,pkname):
     print(f'[ + ] Download.. {pkname} -> {os.path.abspath(DIRECTORY+"/"+pkname)}')
-    r = requests.get(url,stream=True,headers=HEADERS)
+    r = requests.get(url,stream=True,headers=HEADERS())
     open(f'{DIRECTORY}/{pkname}','wb').write(r.content)
 
 
 def get_pages_len():
     l = []
     for i in range(1,50):
-        r = requests.get(f'https://www.apkmirror.com/uploads/page/{i}/?q={NAME_PK}',headers=HEADERS,allow_redirects=True)
+        r = requests.get(f'https://www.apkmirror.com/uploads/page/{i}/?q={NAME_PK}',headers=HEADERS(),allow_redirects=True)
         if '<p>No uploads found</p>' in r.content.decode('utf-8'):
             break
         if i == 1:
@@ -73,7 +75,7 @@ def get_pages_len():
 
 
 def get_all_info(url):
-    r = requests.get(url,headers=HEADERS)
+    r = requests.get(url,headers=HEADERS())
     for href in FS(r.content).xpath('//div[@class="iconsBox "]/div[@class="downloadIconPositioning"]/a/@href'):
         href = APKM_URL + href
         ADD = (href,href.split('/')[-2] + '.apk')
@@ -90,7 +92,7 @@ def getDowloadUrl(content):
 
 
 def get_apk_only(url,pkname):
-    r = requests.get(url,headers=HEADERS)
+    r = requests.get(url,headers=HEADERS())
     ally = FS(r.content).xpath('//div[@class="table topmargin variants-table"]/*')
     if type(ally) is list and ally != []:
         ally.pop(0)
@@ -100,7 +102,7 @@ def get_apk_only(url,pkname):
         elif '\nAPK' in dom.text_content():
             for i in list(set(dom.xpath('div[@class="table-cell rowheight addseparator expand pad dowrap"]/a/@href'))):
                 href = APKM_URL + i +'download/?forcebaseapk'
-                r = requests.get(href,headers=HEADERS)
+                r = requests.get(href,headers=HEADERS())
                 url = getDowloadUrl(r.content)                
                 if url not in [None,'None','none']:
                     download_apk(url,pkname)
