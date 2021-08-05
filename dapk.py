@@ -17,12 +17,18 @@ Without threads so it will be slow, however this is just an example, you can imp
 import requests 
 import os 
 import re
+import random 
 import sys 
-from lxml.html import fromstring as FS
+try:
+    import requests 
+    from lxml.html import fromstring as FS
+    from random_user_agent.user_agent import UserAgent
+except Exception as err:
+    sys.exit(print(f'{err}'))
 
 
 HEADERS = {
-    'User-Agent':'Mozilla/5.0'
+    'User-Agent':f'{UserAgent().get_random_user_agent()}'
 }
 
 LIST_OF_PK = [
