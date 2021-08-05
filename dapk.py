@@ -80,6 +80,7 @@ def getDowloadUrl(content):
     for i in FS(content).xpath('//@href'):
         if '/wp-content/themes/APKMirror/download.php' in i:
             return APKM_URL + i 
+    return None
 
 
 def get_apk_only(url,pkname):
@@ -94,7 +95,9 @@ def get_apk_only(url,pkname):
             for i in list(set(dom.xpath('div[@class="table-cell rowheight addseparator expand pad dowrap"]/a/@href'))):
                 href = APKM_URL + i +'download/?forcebaseapk'
                 r = requests.get(href,headers=HEADERS)
-                download_apk(getDowloadUrl(r.content),pkname)
+                url = getDowloadUrl(r.content)                
+                if url not in [None,'None','none']:
+                    download_apk(url,pkname)
 
 
 def main():
@@ -111,6 +114,7 @@ def main():
     print(f'[ + ] Found {len(LIST_OF_PK)} releases..')
 
     for t in LIST_OF_PK:
+        #print(f'\t{t}\t')
         get_apk_only(t[0],t[1])
 
 main()
