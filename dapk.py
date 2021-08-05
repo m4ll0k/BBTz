@@ -23,15 +23,21 @@ try:
     import requests 
     from lxml.html import fromstring as FS
     from random_user_agent.user_agent import UserAgent
+    from random_user_agent.params import SoftwareName, OperatingSystem
 except Exception as err:
     sys.exit(print(f'{err}'))
 
 
 
-HEADERS = lambda : {
-    'User-Agent':f'{UserAgent().get_random_user_agent()}'
-}
+'''{UserAgent(
+        software_names=['chrome','safari'],
+        operating_systems=['mac'],
+        limit=50
+    ).get_random_user_agent()}'''
 
+HEADERS = lambda : {
+    'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)'
+}
 
 LIST_OF_PK = [
 # (url,package_name)
@@ -86,9 +92,9 @@ def get_all_info(url):
 
 def getDowloadUrl(content):
     for i in FS(content).xpath('//@href'):
-        if '/wp-content/themes/APKMirror/download.php' in i:
+        if 'download.php' in i:
             return APKM_URL + i 
-    return None
+    return 
 
 
 def get_apk_only(url,pkname):
@@ -103,7 +109,7 @@ def get_apk_only(url,pkname):
             for i in list(set(dom.xpath('div[@class="table-cell rowheight addseparator expand pad dowrap"]/a/@href'))):
                 href = APKM_URL + i +'download/?forcebaseapk'
                 r = requests.get(href,headers=HEADERS())
-                url = getDowloadUrl(r.content)                
+                url = getDowloadUrl(r.content)             
                 if url not in [None,'None','none']:
                     download_apk(url,pkname)
 
@@ -122,7 +128,6 @@ def main():
     print(f'[ + ] Found {len(LIST_OF_PK)} releases..')
 
     for t in LIST_OF_PK:
-        #print(f'\t{t}\t')
         get_apk_only(t[0],t[1])
 
 main()
