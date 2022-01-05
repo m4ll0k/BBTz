@@ -10,6 +10,7 @@ GCTExposer - Discover sub-domains by searching through Certificate Transparency 
 import requests 
 import json 
 import argparse
+import sys
 
 def contentParser(content:str):
     content = json.loads(content.decode('utf-8').replace('\n','').replace(')]}\'',''))
@@ -61,5 +62,3 @@ if __name__ == "__main__":
     if args.domain == "":
         sys.exit(parser.print_help())
     GCTExposer(args.domain,args.moreinfo)
-
-    
