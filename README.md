@@ -1,4 +1,1 @@
-### BBT - My Bug Bounty Tools
-
-My bug bounty tools
-
+# these tools are just examples/ideas
